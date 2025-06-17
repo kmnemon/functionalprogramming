@@ -13,8 +13,8 @@
 		E361DE472E00544A007E10BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E361DE3F2E00544A007E10BE /* Assets.xcassets */; };
 		E361DE4A2E0054FC007E10BE /* CouponEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E361DE492E0054BD007E10BE /* CouponEmailView.swift */; };
 		E361DE4D2E0055B5007E10BE /* MegaMartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E361DE4C2E0055AF007E10BE /* MegaMartView.swift */; };
-		E361DE4F2E0056B2007E10BE /* Second1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E361DE4E2E0056AF007E10BE /* Second1.swift */; };
-		E361DE512E0056C2007E10BE /* First2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E361DE502E0056C1007E10BE /* First2.swift */; };
+		E361DE4F2E0056B2007E10BE /* SecondCE.swift in Sources */ = {isa = PBXBuildFile; fileRef = E361DE4E2E0056AF007E10BE /* SecondCE.swift */; };
+		E361DE512E0056C2007E10BE /* FirstMM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E361DE502E0056C1007E10BE /* FirstMM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +26,8 @@
 		E361DE422E00544A007E10BE /* FPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPApp.swift; sourceTree = "<group>"; };
 		E361DE492E0054BD007E10BE /* CouponEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponEmailView.swift; sourceTree = "<group>"; };
 		E361DE4C2E0055AF007E10BE /* MegaMartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegaMartView.swift; sourceTree = "<group>"; };
-		E361DE4E2E0056AF007E10BE /* Second1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Second1.swift; sourceTree = "<group>"; };
-		E361DE502E0056C1007E10BE /* First2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = First2.swift; sourceTree = "<group>"; };
+		E361DE4E2E0056AF007E10BE /* SecondCE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCE.swift; sourceTree = "<group>"; };
+		E361DE502E0056C1007E10BE /* FirstMM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +82,7 @@
 		E361DE482E005474007E10BE /* CouponEmail-1 */ = {
 			isa = PBXGroup;
 			children = (
-				E361DE4E2E0056AF007E10BE /* Second1.swift */,
+				E361DE4E2E0056AF007E10BE /* SecondCE.swift */,
 				E361DE492E0054BD007E10BE /* CouponEmailView.swift */,
 			);
 			path = "CouponEmail-1";
@@ -91,7 +91,7 @@
 		E361DE4B2E005503007E10BE /* MegaMart-2 */ = {
 			isa = PBXGroup;
 			children = (
-				E361DE502E0056C1007E10BE /* First2.swift */,
+				E361DE502E0056C1007E10BE /* FirstMM.swift */,
 				E361DE4C2E0055AF007E10BE /* MegaMartView.swift */,
 			);
 			path = "MegaMart-2";
@@ -172,8 +172,8 @@
 			files = (
 				E361DE442E00544A007E10BE /* ContentView.swift in Sources */,
 				E361DE4A2E0054FC007E10BE /* CouponEmailView.swift in Sources */,
-				E361DE512E0056C2007E10BE /* First2.swift in Sources */,
-				E361DE4F2E0056B2007E10BE /* Second1.swift in Sources */,
+				E361DE512E0056C2007E10BE /* FirstMM.swift in Sources */,
+				E361DE4F2E0056B2007E10BE /* SecondCE.swift in Sources */,
 				E361DE4D2E0055B5007E10BE /* MegaMartView.swift in Sources */,
 				E361DE452E00544A007E10BE /* FPApp.swift in Sources */,
 			);
