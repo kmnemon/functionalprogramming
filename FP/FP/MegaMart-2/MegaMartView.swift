@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MegaMartView2: View {
+struct MegaMartView: View {
     @State var shoppingCartTotal: Double = 0
     @State var tax: Double = 0
     
