@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct MegaMartView: View {
+struct MegaMartView2: View {
     @State var shoppingCartTotal: Double = 0
+    @State var tax: Double = 0
     
     var body: some View {
         List {
@@ -17,17 +18,18 @@ struct MegaMartView: View {
                     Text("\(item.name): $\(item.price)")
                     Button("Buy") {
                         addItemToCart(item.name, item.price)
-                        shoppingCartTotal = shoppingCartTotalStore
+                        shoppingCartTotal = shoppingCartTotalData
+                        tax = taxData
                     }
-                    if showFreeShippingsStore[item.name] ?? false {
+                    if showFreeShippingsData[item.name] ?? false {
                         Text("Free Shipping")
                     }
                 }
             }
         }
-        .navigationTitle("Total Price: \(shoppingCartTotal, specifier: "%.2f")")
+        .navigationTitle("Total Price: \(shoppingCartTotal, specifier: "%.2f"), Tax: \(tax, specifier: "%.2f")")
         .onAppear {
-            self.shoppingCartTotal = shoppingCartTotalStore
+            self.shoppingCartTotal = shoppingCartTotalData
         }
     }
     
