@@ -1,10 +1,8 @@
-////
 ////  First.swift
 ////  FP - 1.Improving the design of actions
 ////          a.Aligning design with business requirements
-////
-////  Created by ke Liu on 6/16/25.
-////
+////          b.Reducing implicit inputs and outputs
+//
 //
 ////Model
 //struct ShoppingCartItem {
@@ -29,12 +27,12 @@
 //
 //func addItemToCart(_ name: String, _ price: Double) -> (total: Double, tax: Double) {
 //    shoppingCartData = addItem(shoppingCartData, name, price)
-//    
+//
 //    var total = calcTotal(shoppingCartData)
 //    updateShipIcons(shoppingCartData)
-//    
+//
 //    var tax = calcTax(total)
-//    
+//
 //    return (total, tax)
 //}
 //
