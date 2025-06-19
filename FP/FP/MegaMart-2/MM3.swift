@@ -1,78 +1,71 @@
+////
+////  First.swift
+////  FP - 1.Improving the design of actions
+////          a.Aligning design with business requirements
+////
+////  Created by ke Liu on 6/16/25.
+////
 //
-//  First.swift
-//  FP - 1.Improving the design of actions
-//          a.Aligning design with business requirements
+////Model
+//struct ShoppingCartItem {
+//    let name: String
+//    let price: Double
+//}
 //
-//  Created by ke Liu on 6/16/25.
+//struct ShoppingListItem: Hashable {
+//    let name: String
+//    let price: Double
+//}
 //
-
-//Model
-struct ShoppingCartItem {
-    let name: String
-    let price: Double
-}
-
-struct ShoppingListItem: Hashable {
-    let name: String
-    let price: Double
-}
-
-let shoppingList: [ShoppingListItem] = [
-    ShoppingListItem(name: "Apples", price: 1.99),
-    ShoppingListItem(name: "Milk", price: 8.49),
-    ShoppingListItem(name: "Bread", price: 4.79)
-]
-
-//MVVM
-var shoppingCartData: [ShoppingCartItem] = []
-var shoppingCartTotalData: Double = 0
-
-var showFreeShippingsData: [String: Bool] = [:]
-var taxData: Double = 0
-
-
-func addItemToCart(_ name: String, _ price: Double) {
-    shoppingCartData = addItem(shoppingCartData, name, price)
-    calcCartTotal();
-}
-
-//calculation
-fileprivate func addItem(_ cart: [ShoppingCartItem], _ name: String, _ price: Double) -> [ShoppingCartItem] {
-    var newCart = cart
-    newCart.append(ShoppingCartItem(name: name, price: price))
-    return newCart
-}
-
-func calcCartTotal() {
-    shoppingCartTotalData = calcTotal(shoppingCartData)
-    updateShipIcons()
-    updateTax()
-}
-
-//calculation
-fileprivate func calcTotal(_ cart: [ShoppingCartItem]) -> Double {
-    return cart.reduce(0) { total, item in
-        total + item.price
-    }
-}
-
-func updateShipIcons() {
-    for shoppingItem in shoppingList {
-        let newCart = addItem(shoppingCartData, shoppingItem.name, shoppingItem.price)
-        showFreeShippingsData[shoppingItem.name] = getFreeShipping(newCart)
-    }
-}
-
-//calculation
-fileprivate func getFreeShipping(_ cart: [ShoppingCartItem]) -> Bool {
-    return calcTotal(cart) >= 20
-}
-
-func updateTax() {
-    taxData = calcTax(shoppingCartTotalData)
-}
-
-//calculation
-fileprivate func calcTax(_ total: Double) -> Double {
-    return total * 0.01
-}
+//let shoppingList: [ShoppingListItem] = [
+//    ShoppingListItem(name: "Apples", price: 1.99),
+//    ShoppingListItem(name: "Milk", price: 8.49),
+//    ShoppingListItem(name: "Bread", price: 4.79)
+//]
+//
+////MVVM
+//var shoppingCartData: [ShoppingCartItem] = []
+//var showFreeShippingsData: [String: Bool] = [:]
+//
+//func addItemToCart(_ name: String, _ price: Double) -> (total: Double, tax: Double) {
+//    shoppingCartData = addItem(shoppingCartData, name, price)
+//    
+//    var total = calcTotal(shoppingCartData)
+//    updateShipIcons(shoppingCartData)
+//    
+//    var tax = calcTax(total)
+//    
+//    return (total, tax)
+//}
+//
+////Key: C: cart operation, I: Item operation, B: Business rule
+////calculation : C, I
+//fileprivate func addItem(_ cart: [ShoppingCartItem], _ name: String, _ price: Double) -> [ShoppingCartItem] {
+//    var newCart = cart
+//    newCart.append(ShoppingCartItem(name: name, price: price))
+//    return newCart
+//}
+//
+////calculation : C, I, B
+//fileprivate func calcTotal(_ cart: [ShoppingCartItem]) -> Double {
+//    return cart.reduce(0) { total, item in
+//        total + item.price
+//    }
+//}
+//
+//func updateShipIcons(_ cart: [ShoppingCartItem]) {
+//    for shoppingItem in shoppingList {
+//        let newCart = addItem(cart, shoppingItem.name, shoppingItem.price)
+//        showFreeShippingsData[shoppingItem.name] = getFreeShipping(newCart)
+//    }
+//}
+//
+////calculation : B
+//fileprivate func getFreeShipping(_ cart: [ShoppingCartItem]) -> Bool {
+//    return calcTotal(cart) >= 20
+//}
+//
+////calculation : B
+//fileprivate func calcTax(_ total: Double) -> Double {
+//    return total * 0.01
+//}
