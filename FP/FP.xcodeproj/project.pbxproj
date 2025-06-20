@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8A4B14C02E024C55007D6402 /* MM2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B14BE2E024C55007D6402 /* MM2.swift */; };
+		8AA5FEF82E04F37200BD9166 /* MM4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5FEF72E04F37200BD9166 /* MM4.swift */; };
 		8AE9D6082E0288A7007DC796 /* MM3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D6052E0288A7007DC796 /* MM3.swift */; };
 		E32F0A472E04433C0082DD23 /* MM3b.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32F0A462E04433C0082DD23 /* MM3b.swift */; };
 		E32F0A492E044FE30082DD23 /* MegaMartView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32F0A482E044FE30082DD23 /* MegaMartView3.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		8A4B14BE2E024C55007D6402 /* MM2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM2.swift; sourceTree = "<group>"; };
+		8AA5FEF72E04F37200BD9166 /* MM4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM4.swift; sourceTree = "<group>"; };
 		8AE9D6052E0288A7007DC796 /* MM3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM3.swift; sourceTree = "<group>"; };
 		E32F0A462E04433C0082DD23 /* MM3b.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM3b.swift; sourceTree = "<group>"; };
 		E32F0A482E044FE30082DD23 /* MegaMartView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegaMartView3.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				8AE9D6052E0288A7007DC796 /* MM3.swift */,
 				E32F0A462E04433C0082DD23 /* MM3b.swift */,
 				E32F0A482E044FE30082DD23 /* MegaMartView3.swift */,
+				8AA5FEF72E04F37200BD9166 /* MM4.swift */,
 			);
 			path = "MegaMart-2";
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				E32F0A472E04433C0082DD23 /* MM3b.swift in Sources */,
 				E361DE4D2E0055B5007E10BE /* MegaMartView.swift in Sources */,
 				8A4B14C02E024C55007D6402 /* MM2.swift in Sources */,
+				8AA5FEF82E04F37200BD9166 /* MM4.swift in Sources */,
 				E361DE452E00544A007E10BE /* FPApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
