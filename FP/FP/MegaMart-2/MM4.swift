@@ -71,7 +71,11 @@ var shoppingCartData: [ShoppingCartItem] = []
 //action
 var showFreeShippingsData: [String: Bool] = [:]
 
-//action
+//API
+//func addItemToCart(_ name: String, _ price: Double) -> (total: Double, tax: Double)
+//func deleteHandler(_ name: String) -> (total: Double, tax: Double)
+
+//API - action
 func addItemToCart(_ name: String, _ price: Double) -> (total: Double, tax: Double) {
     shoppingCartData = addItem(shoppingCartData, makeCartItem(name, price))
     
@@ -116,14 +120,14 @@ func getFreeShippingWithItem(_ cart: [ShoppingCartItem], _ item: ShoppingCartIte
     return getFreeShipping(newCart)
 }
 
-//action
-func setFreeShippingIcon(_ shoppingItem: ShoppingListItem, _ isShow: Bool) {
-    showFreeShippingsData[shoppingItem.name] = isShow
-}
-
 //calculation : B
 fileprivate func getFreeShipping(_ cart: [ShoppingCartItem]) -> Bool {
     return calcTotal(cart) >= 20
+}
+
+//action
+func setFreeShippingIcon(_ shoppingItem: ShoppingListItem, _ isShow: Bool) {
+    showFreeShippingsData[shoppingItem.name] = isShow
 }
 
 //calculation : B
@@ -131,10 +135,22 @@ fileprivate func calcTax(_ total: Double) -> Double {
     return total * 0.01
 }
 
+//API
+func deleteHandler(_ name: String) -> (total: Double, tax: Double) {
+    shoppingCartData = removeItemByName(shoppingCartData, name)
+    var total = calcTotal(shoppingCartData)
+    updateShipIcons(shoppingCartData)
+    
+    var tax = calcTax(total)
+    
+    return (total, tax)
+}
+
 func removeItemByName(_ cart: [ShoppingCartItem] ,_ name: String) -> [ShoppingCartItem] {
-    var newCart = cart
-    newCart.removeAll { $0.name == name }
-    return newCart
+    if let index = cart.firstIndex(where: { $0.name == name }) {
+        return removeItems(cart, index)
+    }
+    return cart
 }
 
 
@@ -143,4 +159,10 @@ func addElementLast<T>(_ array: [T], _ element: T) -> [T] {
     var newArray = array
     newArray.append(element)
     return newArray
+}
+
+func removeItems<T>(_ array: [T], _ index: Array<T>.Index) ->[T] {
+    var copy = array
+    copy.remove(at: index)
+    return copy
 }
