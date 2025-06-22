@@ -79,10 +79,10 @@ var showFreeShippingsData: [String: Bool] = [:]
 func addItemToCart(_ name: String, _ price: Double) -> (total: Double, tax: Double) {
     shoppingCartData = addItem(shoppingCartData, makeCartItem(name, price))
     
-    var total = calcTotal(shoppingCartData)
+    let total = calcTotal(shoppingCartData)
     updateShipIcons(shoppingCartData)
     
-    var tax = calcTax(total)
+    let tax = calcTax(total)
     
     return (total, tax)
 }
@@ -138,10 +138,10 @@ fileprivate func calcTax(_ total: Double) -> Double {
 //API
 func deleteHandler(_ name: String) -> (total: Double, tax: Double) {
     shoppingCartData = removeItemByName(shoppingCartData, name)
-    var total = calcTotal(shoppingCartData)
+    let total = calcTotal(shoppingCartData)
     updateShipIcons(shoppingCartData)
     
-    var tax = calcTax(total)
+    let tax = calcTax(total)
     
     return (total, tax)
 }
