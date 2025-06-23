@@ -49,8 +49,8 @@
 
 //Model
 struct ShoppingCartItem {
-    let name: String
-    let price: Double
+    var name: String
+    var price: Double
 }
 
 struct ShoppingListItem: Hashable {
@@ -74,6 +74,7 @@ var showFreeShippingsData: [String: Bool] = [:]
 //API
 //func addItemToCart(_ name: String, _ price: Double) -> (total: Double, tax: Double)
 //func deleteHandler(_ name: String) -> (total: Double, tax: Double)
+//func setPrice(_ item: ShoppingCartItem, _ price: Double) -> ShoppingCartItem
 
 //API - action
 func addItemToCart(_ name: String, _ price: Double) -> (total: Double, tax: Double) {
@@ -153,6 +154,10 @@ func removeItemByName(_ cart: [ShoppingCartItem] ,_ name: String) -> [ShoppingCa
     return cart
 }
 
+//API
+func setPrice(_ item: ShoppingCartItem, _ price: Double) -> ShoppingCartItem {
+    return map
+}
 
 //utility : A
 func addElementLast<T>(_ array: [T], _ element: T) -> [T] {
