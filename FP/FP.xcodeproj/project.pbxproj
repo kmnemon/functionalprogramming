@@ -12,6 +12,7 @@
 		8AD2A5922E08E138002DC7B8 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2A5912E08E136002DC7B8 /* Map.swift */; };
 		8AD2A5932E08E138002DC7B8 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2A5912E08E136002DC7B8 /* Map.swift */; };
 		8AE9D6082E0288A7007DC796 /* MM3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D6052E0288A7007DC796 /* MM3.swift */; };
+		E3217AC02E098C6B002F4D80 /* MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3217ABF2E098C69002F4D80 /* MapTests.swift */; };
 		E32F0A472E04433C0082DD23 /* MM3b.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32F0A462E04433C0082DD23 /* MM3b.swift */; };
 		E32F0A492E044FE30082DD23 /* MegaMartView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32F0A482E044FE30082DD23 /* MegaMartView3.swift */; };
 		E361DE442E00544A007E10BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E361DE402E00544A007E10BE /* ContentView.swift */; };
@@ -43,6 +44,7 @@
 		8AA5FEF72E04F37200BD9166 /* MM4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM4.swift; sourceTree = "<group>"; };
 		8AD2A5912E08E136002DC7B8 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		8AE9D6052E0288A7007DC796 /* MM3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM3.swift; sourceTree = "<group>"; };
+		E3217ABF2E098C69002F4D80 /* MapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTests.swift; sourceTree = "<group>"; };
 		E32F0A462E04433C0082DD23 /* MM3b.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM3b.swift; sourceTree = "<group>"; };
 		E32F0A482E044FE30082DD23 /* MegaMartView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegaMartView3.swift; sourceTree = "<group>"; };
 		E361DE1D2E004F1A007E10BE /* FP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +166,7 @@
 		E3BA25EA2E07DE8300F4DEA7 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				E3217ABF2E098C69002F4D80 /* MapTests.swift */,
 				E3BA25EB2E07DE8C00F4DEA7 /* CopyTests.swift */,
 			);
 			path = Utility;
@@ -297,6 +300,7 @@
 			files = (
 				E3BA25ED2E07DF4A00F4DEA7 /* Copy.swift in Sources */,
 				8AD2A5932E08E138002DC7B8 /* Map.swift in Sources */,
+				E3217AC02E098C6B002F4D80 /* MapTests.swift in Sources */,
 				E3BA25EC2E07DE9100F4DEA7 /* CopyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

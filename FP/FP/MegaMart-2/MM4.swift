@@ -48,25 +48,20 @@
  */
 
 //Model
-struct ShoppingCartItem {
+struct ShoppingItem: Hashable {
     var name: String
     var price: Double
 }
 
-struct ShoppingListItem: Hashable {
-    let name: String
-    let price: Double
-}
-
-let shoppingList: [ShoppingListItem] = [
-    ShoppingListItem(name: "Apples", price: 1.99),
-    ShoppingListItem(name: "Milk", price: 8.49),
-    ShoppingListItem(name: "Bread", price: 4.79)
+let shoppingList: [ShoppingItem] = [
+    ShoppingItem(name: "Apples", price: 1.99),
+    ShoppingItem(name: "Milk", price: 8.49),
+    ShoppingItem(name: "Bread", price: 4.79)
 ]
 
 //MVVM
 //action
-var shoppingCartData: [ShoppingCartItem] = []
+var shoppingCartData: [ShoppingItem] = []
 
 //action
 var showFreeShippingsData: [String: Bool] = [:]
@@ -89,25 +84,25 @@ func addItemToCart(_ name: String, _ price: Double) -> (total: Double, tax: Doub
 }
 
 //calculation : I
-func makeCartItem(_ name: String, _ price: Double) -> ShoppingCartItem {
-    return ShoppingCartItem(name: name, price: price)
+func makeCartItem(_ name: String, _ price: Double) -> ShoppingItem {
+    return ShoppingItem(name: name, price: price)
 }
 
 //Key: C: cart operation, I: Item operation, B: Business rule, A: Array utility
 //calculation : C
-fileprivate func addItem(_ cart: [ShoppingCartItem], _ item: ShoppingCartItem) -> [ShoppingCartItem] {
+fileprivate func addItem(_ cart: [ShoppingItem], _ item: ShoppingItem) -> [ShoppingItem] {
     return addElementLast(cart, item)
 }
 
 //calculation : C, I, B
-fileprivate func calcTotal(_ cart: [ShoppingCartItem]) -> Double {
+fileprivate func calcTotal(_ cart: [ShoppingItem]) -> Double {
     return cart.reduce(0) { total, item in
         total + item.price	
     }
 }
 
 //action
-func updateShipIcons(_ cart: [ShoppingCartItem]) {
+func updateShipIcons(_ cart: [ShoppingItem]) {
     for shoppingItem in shoppingList {
         let item = makeCartItem(shoppingItem.name, shoppingItem.price)
         let hasFreeShipping = getFreeShippingWithItem(cart, item)
@@ -116,18 +111,18 @@ func updateShipIcons(_ cart: [ShoppingCartItem]) {
 }
 
 //calculation :
-func getFreeShippingWithItem(_ cart: [ShoppingCartItem], _ item: ShoppingCartItem) -> Bool {
+func getFreeShippingWithItem(_ cart: [ShoppingItem], _ item: ShoppingItem) -> Bool {
     let newCart = addItem(cart, item)
     return getFreeShipping(newCart)
 }
 
 //calculation : B
-fileprivate func getFreeShipping(_ cart: [ShoppingCartItem]) -> Bool {
+fileprivate func getFreeShipping(_ cart: [ShoppingItem]) -> Bool {
     return calcTotal(cart) >= 20
 }
 
 //action
-func setFreeShippingIcon(_ shoppingItem: ShoppingListItem, _ isShow: Bool) {
+func setFreeShippingIcon(_ shoppingItem: ShoppingItem, _ isShow: Bool) {
     showFreeShippingsData[shoppingItem.name] = isShow
 }
 
@@ -147,7 +142,7 @@ func deleteHandler(_ name: String) -> (total: Double, tax: Double) {
     return (total, tax)
 }
 
-func removeItemByName(_ cart: [ShoppingCartItem] ,_ name: String) -> [ShoppingCartItem] {
+func removeItemByName(_ cart: [ShoppingItem] ,_ name: String) -> [ShoppingItem] {
     if let index = cart.firstIndex(where: { $0.name == name }) {
         return removeItems(cart, index)
     }
@@ -155,9 +150,23 @@ func removeItemByName(_ cart: [ShoppingCartItem] ,_ name: String) -> [ShoppingCa
 }
 
 //API
-func setPrice(_ item: ShoppingCartItem, _ price: Double) -> ShoppingCartItem {
-    return map
+func setPrice(_ item: ShoppingItem, _ price: Double) -> ShoppingItem {
+    var itemCopy = item
+    itemCopy.price = price
+    return itemCopy
 }
+
+//API
+func setPriceByName(_ cart: [ShoppingItem], _ name: String, _ price: Double) ->[ShoppingItem] {
+    return cart.map {
+        if $0.name == name {
+            return setPrice($0, price)
+        } else {
+            return $0
+        }
+    }
+}
+
 
 //utility : A
 func addElementLast<T>(_ array: [T], _ element: T) -> [T] {

@@ -1,30 +1,25 @@
 ////
 ////  First.swift
 ////  FP - 1.extracting calculation from action
-///     2.eliminating all implicit inputs and outputs
+////     2.eliminating all implicit inputs and outputs
 ////
 ////  Created by ke Liu on 6/16/25.
 ////
 //
 ////Model
-//struct ShoppingCartItem {
+//struct ShoppingItem {
 //    let name: String
 //    let price: Double
 //}
 //
-//struct ShoppingListItem: Hashable {
-//    let name: String
-//    let price: Double
-//}
-//
-//let shoppingList: [ShoppingListItem] = [
-//    ShoppingListItem(name: "Apples", price: 1.99),
-//    ShoppingListItem(name: "Milk", price: 8.49),
-//    ShoppingListItem(name: "Bread", price: 4.79)
+//let shoppingList: [ShoppingItem] = [
+//    ShoppingItem(name: "Apples", price: 1.99),
+//    ShoppingItem(name: "Milk", price: 8.49),
+//    ShoppingItem(name: "Bread", price: 4.79)
 //]
 //
 ////MVVM
-//var shoppingCartData: [ShoppingCartItem] = []
+//var shoppingCartData: [ShoppingItem] = []
 //var shoppingCartTotalData: Double = 0
 //
 //var showFreeShippingsData: [String: Bool] = [:]
@@ -37,9 +32,9 @@
 //}
 //
 ////calculation
-//fileprivate func addItem(_ cart: [ShoppingCartItem], _ name: String, _ price: Double) -> [ShoppingCartItem] {
+//fileprivate func addItem(_ cart: [ShoppingItem], _ name: String, _ price: Double) -> [ShoppingItem] {
 //    var newCart = cart
-//    newCart.append(ShoppingCartItem(name: name, price: price))
+//    newCart.append(ShoppingItem(name: name, price: price))
 //    return newCart
 //}
 //
@@ -50,7 +45,7 @@
 //}
 //
 ////calculation
-//fileprivate func calcTotal(_ cart: [ShoppingCartItem]) -> Double {
+//fileprivate func calcTotal(_ cart: [ShoppingItem]) -> Double {
 //    return cart.reduce(0) { result, item in
 //        result + item.price
 //    }

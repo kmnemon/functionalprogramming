@@ -7,31 +7,26 @@
 //
 //
 ////Model
-//struct ShoppingCartItem {
+//struct ShoppingItem {
 //    let name: String
 //    let price: Double
 //}
 //
-//struct ShoppingListItem: Hashable {
-//    let name: String
-//    let price: Double
-//}
-//
-//let shoppingList: [ShoppingListItem] = [
-//    ShoppingListItem(name: "Apples", price: 1.99),
-//    ShoppingListItem(name: "Milk", price: 8.49),
-//    ShoppingListItem(name: "Bread", price: 4.79)
+//let shoppingList: [ShoppingItem] = [
+//    ShoppingItem(name: "Apples", price: 1.99),
+//    ShoppingItem(name: "Milk", price: 8.49),
+//    ShoppingItem(name: "Bread", price: 4.79)
 //]
 //
 ////MVVM
-//var shoppingCartData: [ShoppingCartItem] = []
+//var shoppingCartData: [ShoppingItem] = []
 //var shoppingCartTotalData: Double = 0
 //
 //var showFreeShippingsData: [String: Bool] = [:]
 //var taxData: Double = 0
 //
 //func addItemToCart(_ name: String, _ price: Double) {
-//    shoppingCartData.append(ShoppingCartItem(name: name, price: price))
+//    shoppingCartData.append(ShoppingItem(name: name, price: price))
 //    calcCartTotal();
 //}
 //

@@ -8,7 +8,7 @@
 
 import Testing
 
-@Test func CopyTests() async throws {
+@Test func copyTests() {
     shallowCopy()
 }
 

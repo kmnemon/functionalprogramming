@@ -11,3 +11,8 @@ func mapSet<K: Hashable, V>(_ object: [K: V], _ key: K, _ value: V) -> [K: V] {
     return objectCopy
 }
  
+func mapDelete<K: Hashable, V>(_ object: [K: V], _ key: K) -> [K: V] {
+    var objectCopy = object
+    objectCopy[key] = nil
+    return objectCopy
+}
