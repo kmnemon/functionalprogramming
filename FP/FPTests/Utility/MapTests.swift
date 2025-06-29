@@ -7,8 +7,12 @@
 
 import Testing
 
-struct A {
+class A {
     var x: Int
+    
+    init(x: Int) {
+        self.x = x
+    }
 }
 
 
@@ -16,7 +20,10 @@ struct A {
 
 @Test func mapTests() {
     var a = A(x: 1)
+    var b = a
     a.x = 2
+    
+    print(b.x)
     
 
 }
