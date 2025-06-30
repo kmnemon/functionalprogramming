@@ -12,7 +12,7 @@ struct ShoppingItem: Hashable {
     let price: Double
 }
 
-class ShoppingItemRef {
+class ShoppingItemRef: Equatable {
     var name: String
     var price: Double
     
@@ -23,6 +23,10 @@ class ShoppingItemRef {
     
     func copy() -> ShoppingItemRef {
         return ShoppingItemRef(name: name, price: price)
+    }
+    
+    static func == (lhs: ShoppingItemRef, rhs: ShoppingItemRef) -> Bool {
+        return lhs.name == rhs.name && lhs.price == rhs.price
     }
 }
 

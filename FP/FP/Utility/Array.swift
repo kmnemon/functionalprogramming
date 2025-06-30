@@ -36,7 +36,7 @@ func push<T>(_ array: [T], _ element: T) -> [T] {
     return newArray
 }
 
-func arraySet<T>(_ array: [T], idx: Int, value: T) -> [T] {
+func arraySet<T>(_ array: [T], _ idx: Int, _ value: T) -> [T] {
     var newArray = array
     newArray[idx] = value
     return newArray

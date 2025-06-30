@@ -9,6 +9,7 @@
 import Testing
 
 @Test func copyTests() {
-    shallowCopy()
+//    shallowCopy()
+    shallowCopyAndstruralSharing()
 }
 

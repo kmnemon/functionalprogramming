@@ -61,3 +61,26 @@ func shallowCopy() {
         print(i.toString()) //[("a", 1), ("b", 99), ("c", 3)]
     }
 }
+
+func shallowCopyAndstruralSharing() {
+    let s1: [ItemReference] = [
+        ItemReference(name: "a", price: 1),
+        ItemReference(name: "b", price: 2),
+    ]
+    
+    var s2 = s1
+    s2[1] = ItemReference(name: "c", price: 3)
+    
+    for i in s1 {
+        print(i.toString()) //[("a", 1), ("b", 2)]
+    }
+    
+    print()
+    
+    for i in s2 {
+        print(i.toString()) //[("a", 1), ("c", 3)]
+    }
+   
+}
+
+
