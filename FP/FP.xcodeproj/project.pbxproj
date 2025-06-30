@@ -30,6 +30,8 @@
 		E3BA25EC2E07DE9100F4DEA7 /* CopyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA25EB2E07DE8C00F4DEA7 /* CopyTests.swift */; };
 		E3BA25ED2E07DF4A00F4DEA7 /* Copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA25622E07D8BC00F4DEA7 /* Copy.swift */; };
 		E3C7C1EB2E122BEA006177BE /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA25602E0797C700F4DEA7 /* Array.swift */; };
+		E3C7C1ED2E123CD5006177BE /* MM5.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C7C1EC2E123CD5006177BE /* MM5.swift */; };
+		E3C7C1EE2E12419E006177BE /* MM5.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C7C1EC2E123CD5006177BE /* MM5.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,7 @@
 		E3BA25622E07D8BC00F4DEA7 /* Copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Copy.swift; sourceTree = "<group>"; };
 		E3BA257F2E07DCA700F4DEA7 /* FPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3BA25EB2E07DE8C00F4DEA7 /* CopyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyTests.swift; sourceTree = "<group>"; };
+		E3C7C1EC2E123CD5006177BE /* MM5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM5.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +148,7 @@
 				E32F0A462E04433C0082DD23 /* MM3b.swift */,
 				8AA5FEF72E04F37200BD9166 /* MM4.swift */,
 				E32F0A482E044FE30082DD23 /* MegaMartView2.swift */,
+				E3C7C1EC2E123CD5006177BE /* MM5.swift */,
 			);
 			path = "MegaMart-2";
 			sourceTree = "<group>";
@@ -294,6 +298,7 @@
 				8A4B14C02E024C55007D6402 /* MM2.swift in Sources */,
 				8AD2A5922E08E138002DC7B8 /* Map.swift in Sources */,
 				E3BA25612E0797CA00F4DEA7 /* Array.swift in Sources */,
+				E3C7C1ED2E123CD5006177BE /* MM5.swift in Sources */,
 				8AA5FEF82E04F37200BD9166 /* MM4.swift in Sources */,
 				E361DE452E00544A007E10BE /* FPApp.swift in Sources */,
 			);
@@ -306,6 +311,7 @@
 				E376ABB52E11799A0023B408 /* MM2.swift in Sources */,
 				E3BA25ED2E07DF4A00F4DEA7 /* Copy.swift in Sources */,
 				E3C7C1EB2E122BEA006177BE /* Array.swift in Sources */,
+				E3C7C1EE2E12419E006177BE /* MM5.swift in Sources */,
 				8AD2A5932E08E138002DC7B8 /* Map.swift in Sources */,
 				E376ABB72E117CDE0023B408 /* ArrayTests.swift in Sources */,
 				E3217AC02E098C6B002F4D80 /* MapTests.swift in Sources */,

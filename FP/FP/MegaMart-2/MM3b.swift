@@ -69,7 +69,7 @@
 ////calculation :
 //func getFreeShippingWithItem(_ cart: [ShoppingItem], _ item: ShoppingItem) -> Bool {
 //    let newCart = addItem(cart, item)
-//    return getFreeShipping(newCart)
+////    return getFreeShipping(newCart)
 //}
 //
 ////action
