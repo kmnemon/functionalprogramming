@@ -69,7 +69,6 @@
 ////API
 ////func addItemToCart(_ name: String, _ price: Double) -> (total: Double, tax: Double)
 ////func deleteHandler(_ name: String) -> (total: Double, tax: Double)
-////func setPrice(_ item: ShoppingCartItem, _ price: Double) -> ShoppingCartItem
 //
 ////API - action
 //func addItemToCart(_ name: String, _ price: Double) -> (total: Double, tax: Double) {
@@ -149,14 +148,12 @@
 //    return cart
 //}
 //
-////API
 //func setPrice(_ item: ShoppingItem, _ price: Double) -> ShoppingItem {
 //    var itemCopy = item
 //    itemCopy.price = price
 //    return itemCopy
 //}
 //
-////API
 //func setPriceByName(_ cart: [ShoppingItem], _ name: String, _ price: Double) ->[ShoppingItem] {
 //    return cart.map {
 //        if $0.name == name {
