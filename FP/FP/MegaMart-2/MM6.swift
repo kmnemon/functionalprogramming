@@ -1,8 +1,7 @@
 //
 //  First.swift
-//  FP - 1.Immutability
-//         a.defensive copy
-//         b.wrap unsafe code
+//  FP - Patterns
+//         1.Straightforward implementations
 //
 //  Created by ke Liu on 6/16/25.
 //
@@ -14,6 +13,10 @@ struct ShoppingItem: Hashable, DeepCopyable {
     
     func deepCopy() -> ShoppingItem {
         return ShoppingItem(name: name, price: price)
+    }
+    
+    static func == (lhs: ShoppingItem, rhs: ShoppingItem) -> Bool {
+        return lhs.name == rhs.name
     }
 }
 
@@ -35,7 +38,7 @@ class ShoppingItemRef: Equatable, DeepCopyable {
     }
     
     static func == (lhs: ShoppingItemRef, rhs: ShoppingItemRef) -> Bool {
-        return lhs.name == rhs.name && lhs.price == rhs.price
+        return lhs.name == rhs.name
     }
 }
 
@@ -50,7 +53,8 @@ var shoppingCartData: [ShoppingItem] = []
 
 var showFreeShippingsData: [String: Bool] = [:]
 
-//API
+//0.UI handler
+
 func addItemToCart(_ name: String, _ price: Double) -> (total: Double, tax: Double) {
     shoppingCartData = addItem(shoppingCartData, makeItem(name, price))
     
@@ -65,7 +69,6 @@ func addItemToCart(_ name: String, _ price: Double) -> (total: Double, tax: Doub
     return (total, tax)
 }
 
-//API
 func deleteHandler(_ name: String) -> (total: Double, tax: Double) {
     shoppingCartData = removeItemByName(shoppingCartData, name)
     let total = calcTotal(shoppingCartData)
@@ -74,45 +77,6 @@ func deleteHandler(_ name: String) -> (total: Double, tax: Double) {
     let tax = calcTax(total)
     
     return (total, tax)
-}
-
-//API
-func freeTieClip(_ cart: [ShoppingItem]) -> [ShoppingItem] {
-    var hasTie = false
-    var hasTieClip = false
-    
-    for item in cart {
-        if item.name == "Tie" {
-            hasTie = true
-        }
-        if item.name == "Tie Clip" {
-            hasTieClip = true
-        }
-    }
-    
-    if hasTie && !hasTieClip {
-        var tieClip = makeItem("tie clip", 0)
-        return addItem(cart, tieClip)
-    }
-    
-    return cart
-}
-
-//opertaion
-func makeItem(_ name: String, _ price: Double) -> ShoppingItem {
-    return ShoppingItem(name: name, price: price)
-}
-
-//opertaion
-fileprivate func addItem(_ cart: [ShoppingItem], _ item: ShoppingItem) -> [ShoppingItem] {
-    return addElementLast(cart, item)
-}
-
-//opertaion
-fileprivate func calcTotal(_ cart: [ShoppingItem]) -> Double {
-    return cart.reduce(0) { total, item in
-        total + item.price	
-    }
 }
 
 func updateShipIcons(_ cart: [ShoppingItem]) {
@@ -128,18 +92,26 @@ func getFreeShippingWithItem(_ cart: [ShoppingItem], _ item: ShoppingItem) -> Bo
     return getFreeShipping(newCart)
 }
 
-//operation
-fileprivate func getFreeShipping(_ cart: [ShoppingItem]) -> Bool {
-    return calcTotal(cart) >= 20
-}
-
 func setFreeShippingIcon(_ shoppingItem: ShoppingItem, _ isShow: Bool) {
     showFreeShippingsData[shoppingItem.name] = isShow
 }
 
-//operation
-fileprivate func calcTax(_ total: Double) -> Double {
-    return total * 0.01
+//1.bussiness rules about carts
+
+func freeTieClip(_ cart: [ShoppingItem]) -> [ShoppingItem] {
+    var hasTie = isInCart(cart, "tie")
+    var hasTieClip = isInCart(cart, "tie clip")
+    
+    if hasTie && !hasTieClip {
+        var tieClip = makeItem("tie clip", 0)
+        return addItem(cart, tieClip)
+    }
+    
+    return cart
+}
+
+fileprivate func getFreeShipping(_ cart: [ShoppingItem]) -> Bool {
+    return calcTotal(cart) >= 20
 }
 
 fileprivate func blackFridayPromotionSafe(_ cart: [ShoppingItem]) -> [ShoppingItem] {
@@ -149,43 +121,58 @@ fileprivate func blackFridayPromotionSafe(_ cart: [ShoppingItem]) -> [ShoppingIt
     return deepCopy(cartCopy) //defensive copy as data enter in immutable zone
 }
 
-//operation
-func removeItemByName(_ cart: [ShoppingItem] ,_ name: String) -> [ShoppingItem] {
-    if let index = cart.firstIndex(where: { $0.name == name }) {
-        return removeItems(cart, index)
+
+//2.business rules(general)
+
+fileprivate func calcTax(_ total: Double) -> Double {
+    return total * 0.01
+}
+
+//3.basic cart operations
+
+fileprivate func addItem(_ cart: [ShoppingItem], _ item: ShoppingItem) -> [ShoppingItem] {
+    return addElementLast(cart, item)
+}
+
+func setPriceByName(_ cart: [ShoppingItem], _ name: String, _ price: Double) ->[ShoppingItem] {
+    if let index = indexOfItem(cart, name) {
+        return arraySet(cart, index, setPrice(cart[index], price))
     }
     return cart
 }
 
-//operation
+func isInCart(_ cart: [ShoppingItem], _ name: String) -> Bool {
+    return indexOfItem(cart, name) != nil
+}
+
+fileprivate func calcTotal(_ cart: [ShoppingItem]) -> Double {
+    return cart.reduce(0) { total, item in
+        total + item.price
+    }
+}
+
+func removeItemByName(_ cart: [ShoppingItem] ,_ name: String) -> [ShoppingItem] {
+    if let index = indexOfItem(cart, name) {
+        return removeItems(cart, index)
+    }
+    
+    return cart
+}
+
+//4.basic item operations
+
+func makeItem(_ name: String, _ price: Double) -> ShoppingItem {
+    return ShoppingItem(name: name, price: price)
+}
+
 func setPrice(_ item: ShoppingItem, _ price: Double) -> ShoppingItem {
     var itemCopy = item
     itemCopy.price = price
     return itemCopy
 }
 
-//operation
-func setPriceByName(_ cart: [ShoppingItem], _ name: String, _ price: Double) ->[ShoppingItem] {
-    return cart.map {
-        if $0.name == name {
-            return setPrice($0, price)
-        } else {
-            return $0
-        }
-    }
-}
+//5.copy-on-write operations
 
-//operation
-func isInCart(_ cart: [ShoppingItem], _ name: String) -> Bool {
-    for item in cart {
-        if item.name == name {
-            return true
-        }
-    }
-    return false
-}
-
-//utility : A
 func addElementLast<T>(_ array: [T], _ element: T) -> [T] {
     var newArray = array
     newArray.append(element)
@@ -198,8 +185,26 @@ func removeItems<T>(_ array: [T], _ index: Array<T>.Index) ->[T] {
     return copy
 }
 
+func indexOfItem<T: Equatable>(_ array: [T], _ element: T) -> Array<T>.Index? {
+    for (index, value) in array.enumerated() {
+        if value == element {
+            return index
+        }
+    }
+    return nil
+}
+
+func indexOfItem(_ cart: [ShoppingItem], _ name: String) -> Array.Index? {
+    for (index, value) in cart.enumerated() {
+        if value.name == name {
+            return index
+        }
+    }
+    return nil
+}
 
 //Legacy Code mutable
+
 func black_friday_promotion(_ cart: inout [ShoppingItem]) {
     cart[0].price *= 0.9
 }
