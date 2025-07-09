@@ -66,7 +66,7 @@ func addItemToCart(_ name: String, _ price: Double) -> (total: Double, tax: Doub
     
     let tax = calcTax(total)
     
-    shoppingCartData = blackFridayPromotionSafe(shoppingCartData) as! [String : ShoppingItem]
+    shoppingCartData = blackFridayPromotionSafe(shoppingCartData)
     
     
     return (total, tax)
@@ -102,11 +102,11 @@ func setFreeShippingIcon(_ shoppingItem: ShoppingItem, _ isShow: Bool) {
 //1.bussiness rules about carts
 
 func freeTieClip(_ cart: CollectionType) -> CollectionType {
-    var hasTie = isInCart(cart, "tie")
-    var hasTieClip = isInCart(cart, "tie clip")
+    let hasTie = isInCart(cart, "tie")
+    let hasTieClip = isInCart(cart, "tie clip")
     
     if hasTie && !hasTieClip {
-        var tieClip = makeItem("tie clip", 0)
+        let tieClip = makeItem("tie clip", 0)
         return addItem(cart, tieClip)
     }
     
@@ -121,7 +121,7 @@ func cartTax(_ cart: [ShoppingItem]) -> Double {
     return calcTax(calcTotal(cart))
 }
 
-fileprivate func blackFridayPromotionSafe(_ cart: CollectionType) -> CollectionType {
+fileprivate func blackFridayPromotionSafe(_ cart: [String: ShoppingItem]) -> [String: ShoppingItem] {
     //defensive copys
     var cartCopy = deepCopy(cart) //defensive copy as data go out to immutable zone, deep copy, copy on write
     
@@ -139,9 +139,8 @@ fileprivate func calcTax(_ total: Double) -> Double {
 //3.basic cart operations
 
 fileprivate func addItem(_ cart: CollectionType, _ item: ShoppingItem) -> CollectionType {
-    if let dict = cart as? [String: ShoppingItem] {
-        return mapSet(dict, item.name, item)
-    }
+    let dict = cart as! [String: ShoppingItem]
+    return mapSet(dict, item.name, item)
 }
 
 func setPriceByName(_ cart: CollectionType, _ name: String, _ price: Double) -> CollectionType {
@@ -149,11 +148,11 @@ func setPriceByName(_ cart: CollectionType, _ name: String, _ price: Double) -> 
         return cart
     }
     
-    if let dict = cart as? [String: ShoppingItem] {
-        let item = dict[name]!
-        let copyItem = setPrice(item, price)
-        return mapSet(dict, item.name, copyItem)
-    }
+    let dict = cart as! [String: ShoppingItem]
+    let item = dict[name]!
+    let copyItem = setPrice(item, price)
+    return mapSet(dict, item.name, copyItem)
+    
 }
 
 func isInCart(_ cart: CollectionType, _ name: String) -> Bool {
@@ -164,25 +163,22 @@ func isInCart(_ cart: CollectionType, _ name: String) -> Bool {
     //        return indexOfItem(array, name) != nil
     //    }
     
-    if let dict = cart as? [String: ShoppingItem] {
-        return dict.keys.contains(name)
-    }
+    let dict = cart as! [String: ShoppingItem]
+    return dict.keys.contains(name)
 }
 
 fileprivate func calcTotal(_ cart: CollectionType) -> Double {
     var total = 0.0
-    if let dict = cart as? [String: ShoppingItem] {
-        for item in dict.values {
-            total += item.price
-        }
-        return total
+    let dict = cart as! [String: ShoppingItem]
+    for item in dict.values {
+        total += item.price
     }
+    return total
 }
 
 func removeItemByName(_ cart: CollectionType ,_ name: String) -> CollectionType {
-    if let dict = cart as? [String: ShoppingItem] {
-        return mapDelete(dict, name)
-    }
+    let dict = cart as! [String: ShoppingItem]
+    return mapDelete(dict, name)
 }
 
 //4.basic item operations
@@ -231,6 +227,6 @@ func indexOfItem(_ cart: [ShoppingItem], _ name: String) -> Array.Index? {
 
 //Legacy Code mutable
 
-func black_friday_promotion(_ cart: inout [ShoppingItem]) {
-    cart[0].price *= 0.9
+func black_friday_promotion(_ cart: inout [String: ShoppingItem]) {
+    cart["iwatch"]?.price = 0.9
 }
