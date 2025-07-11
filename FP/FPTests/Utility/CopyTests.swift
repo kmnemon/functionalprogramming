@@ -88,6 +88,12 @@ func shallowCopyAndstruralSharingExample() {
 
 @Test func copyTests() {
 //    shallowCopyExample()
-    shallowCopyAndstruralSharingExample()
+//    shallowCopyAndstruralSharingExample()
+    
+    var s1 = ItemReference(name: "a", price: 1)
+    var s2 = s1
+    s1.name = "b"
+    print(s1.toString())
+    print(s2.toString()) 
 }
 

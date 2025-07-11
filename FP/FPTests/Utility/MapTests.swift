@@ -19,11 +19,7 @@ class A {
 
 
 @Test func mapTests() {
-    var a = A(x: 1)
-    var b = a
-    a.x = 2
-    
-    print(b.x)
+
     
 
 }

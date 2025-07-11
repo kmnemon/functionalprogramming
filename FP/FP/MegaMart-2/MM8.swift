@@ -3,6 +3,7 @@
 ////  FP - Patterns
 ////         1.Straightforward implementations
 ////         2.Abstraction barrier
+////         3.Minimal interface
 ////  Created by ke Liu on 6/16/25.
 ////
 //
@@ -67,6 +68,8 @@
 //    
 //    let tax = calcTax(total)
 //    
+//    logAddToCard(1, makeItem(name, price))
+//    
 //    shoppingCartData = blackFridayPromotionSafe(shoppingCartData)
 //    
 //    
@@ -120,6 +123,12 @@
 //
 //func cartTax(_ cart: [ShoppingItem]) -> Double {
 //    return calcTax(calcTotal(cart))
+//}
+//
+//func getsWatchDiscount(_ cart: CollectionType) -> Bool {
+//    let total = calcTotal(cart)
+//    let hasWatch = isInCart(cart, "watch")
+//    return total >= 100 && hasWatch
 //}
 //
 //fileprivate func blackFridayPromotionSafe(_ cart: [String: ShoppingItem]) -> [String: ShoppingItem] {
@@ -224,6 +233,11 @@
 //        }
 //    }
 //    return nil
+//}
+//
+////mock DB
+//func logAddToCard(_ userId: Int, _ item: ShoppingItem) {
+//    //
 //}
 //
 ////Legacy Code mutable

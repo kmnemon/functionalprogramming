@@ -15,6 +15,10 @@
 		E3217AC02E098C6B002F4D80 /* MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3217ABF2E098C69002F4D80 /* MapTests.swift */; };
 		E3234A362E18B50D00ADC1DE /* MM6.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3234A352E18B50D00ADC1DE /* MM6.swift */; };
 		E3234A372E18B50D00ADC1DE /* MM6.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3234A352E18B50D00ADC1DE /* MM6.swift */; };
+		E32622F42E1F766A00213285 /* MM8.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32622F32E1F766A00213285 /* MM8.swift */; };
+		E32622F52E1F766A00213285 /* MM8.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32622F32E1F766A00213285 /* MM8.swift */; };
+		E32622F72E1FB11000213285 /* MM9.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32622F62E1FB11000213285 /* MM9.swift */; };
+		E32622F82E1FB11000213285 /* MM9.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32622F62E1FB11000213285 /* MM9.swift */; };
 		E32BC7FF2E1D4DE00003C473 /* MM7.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32BC7FE2E1D4DE00003C473 /* MM7.swift */; };
 		E32BC8002E1D4DE00003C473 /* MM7.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32BC7FE2E1D4DE00003C473 /* MM7.swift */; };
 		E32F0A472E04433C0082DD23 /* MM3b.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32F0A462E04433C0082DD23 /* MM3b.swift */; };
@@ -55,6 +59,8 @@
 		8AE9D6052E0288A7007DC796 /* MM3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM3.swift; sourceTree = "<group>"; };
 		E3217ABF2E098C69002F4D80 /* MapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTests.swift; sourceTree = "<group>"; };
 		E3234A352E18B50D00ADC1DE /* MM6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM6.swift; sourceTree = "<group>"; };
+		E32622F32E1F766A00213285 /* MM8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM8.swift; sourceTree = "<group>"; };
+		E32622F62E1FB11000213285 /* MM9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM9.swift; sourceTree = "<group>"; };
 		E32BC7FE2E1D4DE00003C473 /* MM7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM7.swift; sourceTree = "<group>"; };
 		E32F0A462E04433C0082DD23 /* MM3b.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM3b.swift; sourceTree = "<group>"; };
 		E32F0A482E044FE30082DD23 /* MegaMartView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegaMartView2.swift; sourceTree = "<group>"; };
@@ -155,8 +161,10 @@
 				8AA5FEF72E04F37200BD9166 /* MM4.swift */,
 				E3C7C1EC2E123CD5006177BE /* MM5.swift */,
 				E3234A352E18B50D00ADC1DE /* MM6.swift */,
-				E32F0A482E044FE30082DD23 /* MegaMartView2.swift */,
 				E32BC7FE2E1D4DE00003C473 /* MM7.swift */,
+				E32622F32E1F766A00213285 /* MM8.swift */,
+				E32622F62E1FB11000213285 /* MM9.swift */,
+				E32F0A482E044FE30082DD23 /* MegaMartView2.swift */,
 			);
 			path = "MegaMart-2";
 			sourceTree = "<group>";
@@ -307,6 +315,8 @@
 				E361DE4D2E0055B5007E10BE /* MegaMartView.swift in Sources */,
 				8A4B14C02E024C55007D6402 /* MM2.swift in Sources */,
 				8AD2A5922E08E138002DC7B8 /* Map.swift in Sources */,
+				E32622F42E1F766A00213285 /* MM8.swift in Sources */,
+				E32622F72E1FB11000213285 /* MM9.swift in Sources */,
 				E3BA25612E0797CA00F4DEA7 /* Array.swift in Sources */,
 				E3C7C1ED2E123CD5006177BE /* MM5.swift in Sources */,
 				8AA5FEF82E04F37200BD9166 /* MM4.swift in Sources */,
@@ -326,7 +336,9 @@
 				8AD2A5932E08E138002DC7B8 /* Map.swift in Sources */,
 				E32BC8002E1D4DE00003C473 /* MM7.swift in Sources */,
 				E376ABB72E117CDE0023B408 /* ArrayTests.swift in Sources */,
+				E32622F52E1F766A00213285 /* MM8.swift in Sources */,
 				E3217AC02E098C6B002F4D80 /* MapTests.swift in Sources */,
+				E32622F82E1FB11000213285 /* MM9.swift in Sources */,
 				E3BA25EC2E07DE9100F4DEA7 /* CopyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
