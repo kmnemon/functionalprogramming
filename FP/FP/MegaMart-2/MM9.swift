@@ -10,6 +10,18 @@ protocol CollectionType: DeepCopyable where Self: DeepCopyable {}
 extension Array: CollectionType where Element: DeepCopyable {}
 extension Dictionary: CollectionType where Value: DeepCopyable {}
 
+enum FieldError: Error {
+    case invalidNumber
+}
+
+enum Field {
+    case name
+    case price
+    case quantity
+    case tax
+    case shipping
+}
+
 //Model
 struct ShoppingItem: Hashable, DeepCopyable {
     var name: String
@@ -26,22 +38,35 @@ struct ShoppingItem: Hashable, DeepCopyable {
         return lhs.name == rhs.name
     }
     
-    mutating func setValue(for key: String, value: Any) -> ShoppingItem {
+    func getValue(for key: Field) -> Any {
+        switch key {
+        case Field.name:
+            return name
+        case Field.price:
+            return price
+        case Field.quantity:
+            return quantity
+        case Field.tax:
+            return tax
+        case Field.shipping:
+            return shipping
+        }
+    }
+    
+    mutating func setValue(for key: Field, value: Any) -> ShoppingItem {
         var copy = self
         
         switch key {
-        case "name":
+        case Field.name:
             if let v = value as? String { copy.name = v }
-        case "price":
+        case Field.price:
             if let v = value as? Double { copy.price = v }
-        case "quantity":
+        case Field.quantity:
             if let v = value as? Int { copy.quantity = v }
-        case "tax":
+        case Field.tax:
             if let v = value as? Double { copy.tax = v }
-        case "shipping":
+        case Field.shipping:
             if let v = value as? String { copy.shipping = v }
-        default:
-            print("Unknown key: \(key)")
         }
         
         return copy
@@ -76,22 +101,35 @@ final class ShoppingItemRef: Equatable, DeepCopyable {
         return lhs.name == rhs.name
     }
     
-    func setValue(for key: String, value: Any) -> ShoppingItemRef {
+    func getValue(for key: Field) -> Any {
+        switch key {
+        case Field.name:
+            return name
+        case Field.price:
+            return price
+        case Field.quantity:
+            return quantity
+        case Field.tax:
+            return tax
+        case Field.shipping:
+            return shipping
+        }
+    }
+    
+    func setValue(for key: Field, value: Any) -> ShoppingItemRef {
         let copy = self
         
         switch key {
-        case "name":
+        case Field.name:
             if let v = value as? String { copy.name = v }
-        case "price":
+        case Field.price:
             if let v = value as? Double { copy.price = v }
-        case "quantity":
+        case Field.quantity:
             if let v = value as? Int { copy.quantity = v }
-        case "tax":
+        case Field.tax:
             if let v = value as? Double { copy.tax = v }
-        case "shipping":
+        case Field.shipping:
             if let v = value as? String { copy.shipping = v }
-        default:
-            print("Unknown key: \(key)")
         }
         
         return copy
@@ -205,16 +243,33 @@ fileprivate func addItem(_ cart: CollectionType, _ item: ShoppingItem) -> Collec
     return mapSet(dict, item.name, item)
 }
 
-func setFieldByName<T>(_ cart: CollectionType, _ name: String, _ field: String, _ value: T) -> CollectionType {
+func setFieldByName<T>(_ cart: CollectionType, _ name: String, _ field: Field, _ value: T) -> CollectionType {
     guard isInCart(cart, name) else {
         return cart
     }
-
+    
     let dict = cart as! [String: ShoppingItem]
     var item = dict[name]!
     let newItem = item.setValue(for: field, value: value)
     return mapSet(dict, newItem.name, newItem)
+    
+}
 
+func incrementFieldByName(_ cart: CollectionType, _ name: String, _ field: Field) throws -> CollectionType {
+    if field != .quantity {
+        throw FieldError.invalidNumber
+    }
+    
+    guard isInCart(cart, name) else {
+        return cart
+    }
+    
+    let dict = cart as! [String: ShoppingItem]
+    var item = dict[name]!
+    let value = item.getValue(for: field)
+    let newValue = value as! Int + 1
+    let newItem = item.setValue(for: field, value: newValue)
+    return mapSet(dict, newItem.name, newItem)
 }
 
 func isInCart(_ cart: CollectionType, _ name: String) -> Bool {
