@@ -1,6 +1,7 @@
 //
 //  First.swift
 //  FP - First Class
+//      1.first class value
 //
 //  Created by ke Liu on 6/16/25.
 //
@@ -25,21 +26,25 @@ struct ShoppingItem: Hashable, DeepCopyable {
         return lhs.name == rhs.name
     }
     
-    mutating func setValue(for key: String, value: Any) {
+    mutating func setValue(for key: String, value: Any) -> ShoppingItem {
+        var copy = self
+        
         switch key {
         case "name":
-            if let v = value as? String { name = v }
+            if let v = value as? String { copy.name = v }
         case "price":
-            if let v = value as? Double { price = v }
+            if let v = value as? Double { copy.price = v }
         case "quantity":
-            if let v = value as? Int { quantity = v }
+            if let v = value as? Int { copy.quantity = v }
         case "tax":
-            if let v = value as? Double { tax = v }
+            if let v = value as? Double { copy.tax = v }
         case "shipping":
-            if let v = value as? String { shipping = v }
+            if let v = value as? String { copy.shipping = v }
         default:
             print("Unknown key: \(key)")
         }
+        
+        return copy
     }
 }
 
@@ -71,21 +76,25 @@ final class ShoppingItemRef: Equatable, DeepCopyable {
         return lhs.name == rhs.name
     }
     
-    func setValue(for key: String, value: Any) {
+    func setValue(for key: String, value: Any) -> ShoppingItemRef {
+        let copy = self
+        
         switch key {
         case "name":
-            if let v = value as? String { name = v }
+            if let v = value as? String { copy.name = v }
         case "price":
-            if let v = value as? Double { price = v }
+            if let v = value as? Double { copy.price = v }
         case "quantity":
-            if let v = value as? Int { quantity = v }
+            if let v = value as? Int { copy.quantity = v }
         case "tax":
-            if let v = value as? Double { tax = v }
+            if let v = value as? Double { copy.tax = v }
         case "shipping":
-            if let v = value as? String { shipping = v }
+            if let v = value as? String { copy.shipping = v }
         default:
             print("Unknown key: \(key)")
         }
+        
+        return copy
     }
 }
 
@@ -196,39 +205,19 @@ fileprivate func addItem(_ cart: CollectionType, _ item: ShoppingItem) -> Collec
     return mapSet(dict, item.name, item)
 }
 
-func setPriceByName(_ cart: CollectionType, _ name: String, _ price: Double) -> CollectionType {
+func setFieldByName<T>(_ cart: CollectionType, _ name: String, _ field: String, _ value: T) -> CollectionType {
     guard isInCart(cart, name) else {
         return cart
     }
-    
+
     let dict = cart as! [String: ShoppingItem]
-    let item = dict[name]!
-    let copyItem = setPrice(item, price)
-    return mapSet(dict, item.name, copyItem)
-    
+    var item = dict[name]!
+    let newItem = item.setValue(for: field, value: value)
+    return mapSet(dict, newItem.name, newItem)
+
 }
 
-//func setFieldByName<T>(_ cart: [String: ShoppingItemRef], _ name: String, _field: String, _ value: T) -> [String :ShoppingItemRef] {
-//    guard isInCart(cart, name) else {
-//        return cart
-//    }
-//
-////    let dict = cart as! [String: ShoppingItem]
-////    let item = dict[name]!
-//    let item = cart[name]
-//    let newItem = item.setting()
-//    return mapSet(dict, item.name, copyItem)
-//
-//}
-
 func isInCart(_ cart: CollectionType, _ name: String) -> Bool {
-    //    if let dict = cart as? [String: ShoppingItem] {
-    //        return dict.keys.contains(name)
-    //    }
-    //    else if let array = cart as? [ShoppingItem] {
-    //        return indexOfItem(array, name) != nil
-    //    }
-    
     let dict = cart as! [String: ShoppingItem]
     return dict.keys.contains(name)
 }
