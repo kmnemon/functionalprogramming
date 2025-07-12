@@ -5,6 +5,11 @@
 //  Created by ke Liu on 6/22/25.
 //
 
+func withArrayCopy<T>(_ array: [T], _ modify: (inout [T])->Void) -> [T] {
+    var copy = array
+    modify(&copy)
+    return copy
+}
 
 func firstElement<T>(_ array: [T]) -> T? {
    return array.first
@@ -31,13 +36,13 @@ func popLast<T>(_ array: [T]) -> (T?, [T]) {
 }
 
 func push<T>(_ array: [T], _ element: T) -> [T] {
-    var newArray = array
-    newArray.append(element)
-    return newArray
+    return withArrayCopy(array, { $0.append(element) })
 }
 
 func arraySet<T>(_ array: [T], _ idx: Int, _ value: T) -> [T] {
-    var newArray = array
-    newArray[idx] = value
-    return newArray
+    return withArrayCopy(array, { copy in
+            copy[idx] = value
+    })
 }
+
+
