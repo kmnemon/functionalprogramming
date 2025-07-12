@@ -326,14 +326,6 @@ func indexOfItem<T: Equatable>(_ array: [T], _ element: T) -> Array<T>.Index? {
     return nil
 }
 
-func indexOfItem(_ cart: [ShoppingItem], _ name: String) -> Array.Index? {
-    for (index, value) in cart.enumerated() {
-        if value.name == name {
-            return index
-        }
-    }
-    return nil
-}
 
 //mock DB
 func logAddToCard(_ userId: Int, _ item: ShoppingItem) {
