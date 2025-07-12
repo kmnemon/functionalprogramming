@@ -6,8 +6,8 @@
 //
 
 func foodExample() {
-    var foods: [String] = []
-    var dishes: [String] = []
+    let foods: [String] = []
+    let dishes: [String] = []
     
     //original code
     for food in foods {
