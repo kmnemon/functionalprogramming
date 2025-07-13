@@ -26,6 +26,7 @@
 		E32BC8002E1D4DE00003C473 /* MM7.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32BC7FE2E1D4DE00003C473 /* MM7.swift */; };
 		E32F0A472E04433C0082DD23 /* MM3b.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32F0A462E04433C0082DD23 /* MM3b.swift */; };
 		E32F0A492E044FE30082DD23 /* MegaMartView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32F0A482E044FE30082DD23 /* MegaMartView2.swift */; };
+		E34261782E240EFE00B9CB74 /* WithLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34261772E240EF600B9CB74 /* WithLogging.swift */; };
 		E361DE442E00544A007E10BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E361DE402E00544A007E10BE /* ContentView.swift */; };
 		E361DE452E00544A007E10BE /* FPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E361DE422E00544A007E10BE /* FPApp.swift */; };
 		E361DE462E00544A007E10BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E361DE3D2E00544A007E10BE /* Preview Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		E32BC7FE2E1D4DE00003C473 /* MM7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM7.swift; sourceTree = "<group>"; };
 		E32F0A462E04433C0082DD23 /* MM3b.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM3b.swift; sourceTree = "<group>"; };
 		E32F0A482E044FE30082DD23 /* MegaMartView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegaMartView2.swift; sourceTree = "<group>"; };
+		E34261772E240EF600B9CB74 /* WithLogging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithLogging.swift; sourceTree = "<group>"; };
 		E361DE1D2E004F1A007E10BE /* FP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E361DE3D2E00544A007E10BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E361DE3F2E00544A007E10BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		E32622FD2E21F8C000213285 /* HighOrder */ = {
 			isa = PBXGroup;
 			children = (
+				E34261772E240EF600B9CB74 /* WithLogging.swift */,
 				E32622FE2E21F8D600213285 /* FoodExample.swift */,
 			);
 			path = HighOrder;
@@ -340,6 +343,7 @@
 				E32622FF2E21F8E200213285 /* FoodExample.swift in Sources */,
 				E361DE4F2E0056B2007E10BE /* CE2.swift in Sources */,
 				E32F0A472E04433C0082DD23 /* MM3b.swift in Sources */,
+				E34261782E240EFE00B9CB74 /* WithLogging.swift in Sources */,
 				E3234A362E18B50D00ADC1DE /* MM6.swift in Sources */,
 				E3BA25632E07D8BF00F4DEA7 /* Copy.swift in Sources */,
 				E361DE4D2E0055B5007E10BE /* MegaMartView.swift in Sources */,

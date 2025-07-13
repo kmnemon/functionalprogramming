@@ -229,11 +229,11 @@ fileprivate func blackFridayPromotionSafe(_ cart: [String: ShoppingItem]) -> [St
     return deepCopy(cartCopy) //defensive copy as data enter in immutable zone
 }
 
-func when(_ cart: CollectionType, _ field: Field, _ test: (CollectionType, Field) -> Bool, _ then: () -> CollectionType) -> CollectionType {
-    if test(cart, field) {
+func IF(_ test: Bool, _ then: () -> Any, _ ELSE: () -> Any) -> Any {
+    if test {
         return then()
     } else {
-        return cart
+        return ELSE()
     }
 }
 
@@ -243,6 +243,7 @@ func when(_ cart: CollectionType, _ field: Field, _ test: (CollectionType, Field
 fileprivate func calcTax(_ total: Double) -> Double {
     return total * 0.01
 }
+
 
 //3.basic cart operations
 
