@@ -51,4 +51,6 @@ func wrapLogging<T>(_ f: @escaping (T) throws -> Void) -> (T) -> Void {
 
 let saveUserDataWithLogging = wrapLogging(saveUserData)
 
-
+func example2(_ user: String) {
+    saveUserDataWithLogging(user)
+}
