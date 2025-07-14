@@ -46,6 +46,7 @@
 		E3C7C1EB2E122BEA006177BE /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA25602E0797C700F4DEA7 /* Array.swift */; };
 		E3C7C1ED2E123CD5006177BE /* MM5.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C7C1EC2E123CD5006177BE /* MM5.swift */; };
 		E3C7C1EE2E12419E006177BE /* MM5.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C7C1EC2E123CD5006177BE /* MM5.swift */; };
+		E3EC69532E252DC600911C72 /* Arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EC69522E252DAD00911C72 /* Arithmetic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		E3BA257F2E07DCA700F4DEA7 /* FPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3BA25EB2E07DE8C00F4DEA7 /* CopyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyTests.swift; sourceTree = "<group>"; };
 		E3C7C1EC2E123CD5006177BE /* MM5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM5.swift; sourceTree = "<group>"; };
+		E3EC69522E252DAD00911C72 /* Arithmetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arithmetic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		E32622FD2E21F8C000213285 /* HighOrder */ = {
 			isa = PBXGroup;
 			children = (
+				E3EC69522E252DAD00911C72 /* Arithmetic.swift */,
 				E34261772E240EF600B9CB74 /* WithLogging.swift */,
 				E32622FE2E21F8D600213285 /* FoodExample.swift */,
 			);
@@ -353,6 +356,7 @@
 				E32622F72E1FB11000213285 /* MM9.swift in Sources */,
 				E3BA25612E0797CA00F4DEA7 /* Array.swift in Sources */,
 				E3C7C1ED2E123CD5006177BE /* MM5.swift in Sources */,
+				E3EC69532E252DC600911C72 /* Arithmetic.swift in Sources */,
 				8AA5FEF82E04F37200BD9166 /* MM4.swift in Sources */,
 				E361DE452E00544A007E10BE /* FPApp.swift in Sources */,
 			);

@@ -54,3 +54,15 @@ let saveUserDataWithLogging = wrapLogging(saveUserData)
 func example2(_ user: String) {
     saveUserDataWithLogging(user)
 }
+
+
+//Example 3: f(a,b,c)
+func codeDoNotThrow<T, U, V>(_ f: @escaping (T, U, V) throws -> Any) -> (T,U,V) -> Any? {
+    return { (a: T, b: U, c: V) in
+        do {
+            return try f(a, b, c)
+        } catch {
+            return nil
+        }
+    }
+}
