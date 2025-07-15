@@ -1,7 +1,7 @@
 //
 //  First.swift
-//  FP - First Class
-//      1.first class value
+//  FP - Map,filter,reduce
+//
 //
 //  Created by ke Liu on 6/16/25.
 //
@@ -135,7 +135,6 @@ final class ShoppingItemRef: Equatable, DeepCopyable {
         return copy
     }
 }
-
 
 let shoppingList: [ShoppingItem] = [
     ShoppingItem(name: "Apples", price: 1.99),
