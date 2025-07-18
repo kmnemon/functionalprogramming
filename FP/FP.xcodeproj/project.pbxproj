@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8A4B14C02E024C55007D6402 /* MM2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B14BE2E024C55007D6402 /* MM2.swift */; };
+		8A80E4D72E2A28C9000827EF /* LambdaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A80E4D62E2A28C2000827EF /* LambdaTests.swift */; };
 		8AA5FEF82E04F37200BD9166 /* MM4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5FEF72E04F37200BD9166 /* MM4.swift */; };
 		8AD2A5922E08E138002DC7B8 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2A5912E08E136002DC7B8 /* Map.swift */; };
 		8AD2A5932E08E138002DC7B8 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2A5912E08E136002DC7B8 /* Map.swift */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		8A4B14BE2E024C55007D6402 /* MM2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM2.swift; sourceTree = "<group>"; };
+		8A80E4D62E2A28C2000827EF /* LambdaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LambdaTests.swift; sourceTree = "<group>"; };
 		8AA5FEF72E04F37200BD9166 /* MM4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM4.swift; sourceTree = "<group>"; };
 		8AD2A5912E08E136002DC7B8 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		8AE9D6052E0288A7007DC796 /* MM3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM3.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 		E3BA25EA2E07DE8300F4DEA7 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				8A80E4D62E2A28C2000827EF /* LambdaTests.swift */,
 				E376ABB62E117CD90023B408 /* ArrayTests.swift */,
 				E3217ABF2E098C69002F4D80 /* MapTests.swift */,
 				E3BA25EB2E07DE8C00F4DEA7 /* CopyTests.swift */,
@@ -375,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A80E4D72E2A28C9000827EF /* LambdaTests.swift in Sources */,
 				E3234A372E18B50D00ADC1DE /* MM6.swift in Sources */,
 				E376ABB52E11799A0023B408 /* MM2.swift in Sources */,
 				E3BA25ED2E07DF4A00F4DEA7 /* Copy.swift in Sources */,

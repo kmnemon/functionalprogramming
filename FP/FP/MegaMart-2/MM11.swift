@@ -243,13 +243,9 @@ func IF(_ test: Bool, _ then: () -> Any, _ ELSE: () -> Any) -> Any {
 //1a. businees rules about inventory
 
 func shoesAndSocksInventory(_ products: [Product]) -> Int {
-    return products.filter {
-        return $0.type == "shoes" || $0.type == "socks"
-    }
-    .reduce(0) {
-        $0 + $1.numberInInventory
-    }
-    
+    return products
+        .filter { $0.type == "shoes" || $0.type == "socks" }
+        .reduce(0) { $0 + $1.numberInInventory }
 }
 
 //2.business rules(general)

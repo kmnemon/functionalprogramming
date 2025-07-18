@@ -51,3 +51,29 @@ func reduceExample() {
     let anotherSum: Int = numbers.reduce(0, +)
     print(anotherSum)
 }
+
+func foreachExample() {
+    let numbers: [Int] = [1, 2, 3, 4, 5]
+    numbers.forEach { print($0) }
+}
+
+func flatMapExample() {
+    let numbers = [[1, 2], [3, 4], [5, 6]]
+    let n = numbers.flatMap { $0 }
+    print(n)
+}
+
+func sortExample() {
+    var numbers = [8, 3, 2]
+    numbers.sort()
+    print(numbers)
+    
+    numbers.sort { $0 > $1 }
+    print(numbers)
+}
+
+func prefixExample() {
+    var numbers = [8, 3, 2]
+    let n = numbers.prefix(2)
+    print(n)
+}
