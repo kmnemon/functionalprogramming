@@ -65,10 +65,13 @@ func flatMapExample() {
 
 func sortExample() {
     var numbers = [8, 3, 2]
-    numbers.sort()
+    numbers = numbers.sorted()
     print(numbers)
     
-    numbers.sort { $0 > $1 }
+    numbers = numbers
+        .sorted { $0 > $1 }
+        .reversed()
+    
     print(numbers)
 }
 
