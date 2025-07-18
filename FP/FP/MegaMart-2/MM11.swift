@@ -10,6 +10,11 @@ protocol CollectionType: DeepCopyable where Self: DeepCopyable {}
 extension Array: CollectionType where Element: DeepCopyable {}
 extension Dictionary: CollectionType where Value: DeepCopyable {}
 
+protocol Indexable {
+    subscript(index: Field) -> Any { get }
+    mutating func setValue(for key: Field, value: Any) -> Self
+}
+
 enum FieldError: Error {
     case invalidNumber
 }
@@ -23,7 +28,7 @@ enum Field {
 }
 
 //Model
-struct ShoppingItem: Hashable, DeepCopyable {
+struct ShoppingItem: Hashable, DeepCopyable, Indexable {
     var name: String
     var price: Double
     var quantity: Int = 1
@@ -36,6 +41,15 @@ struct ShoppingItem: Hashable, DeepCopyable {
     
     static func == (lhs: ShoppingItem, rhs: ShoppingItem) -> Bool {
         return lhs.name == rhs.name
+    }
+    
+    subscript(index: Field) -> Any {
+        get {
+            return getValue(for: index)
+        }
+        set {
+            self = setValue(for: index, value: newValue)
+        }
     }
     
     func getValue(for key: Field) -> Any {
@@ -53,7 +67,7 @@ struct ShoppingItem: Hashable, DeepCopyable {
         }
     }
     
-    mutating func setValue(for key: Field, value: Any) -> ShoppingItem {
+    mutating func setValue(for key: Field, value: Any) -> Self {
         var copy = self
         
         switch key {
@@ -101,6 +115,12 @@ final class ShoppingItemRef: Equatable, DeepCopyable {
         return lhs.name == rhs.name
     }
     
+    subscript(index: Field) -> Any {
+        get {
+            return getValue(for: index)
+        }
+    }
+    
     func getValue(for key: Field) -> Any {
         switch key {
         case Field.name:
@@ -116,7 +136,7 @@ final class ShoppingItemRef: Equatable, DeepCopyable {
         }
     }
     
-    func setValue(for key: Field, value: Any) -> ShoppingItemRef {
+    func setValue(for key: Field, value: Any) -> Self {
         let copy = self
         
         switch key {

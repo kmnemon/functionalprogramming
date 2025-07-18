@@ -50,6 +50,8 @@
 		E3C7C1EB2E122BEA006177BE /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA25602E0797C700F4DEA7 /* Array.swift */; };
 		E3C7C1ED2E123CD5006177BE /* MM5.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C7C1EC2E123CD5006177BE /* MM5.swift */; };
 		E3C7C1EE2E12419E006177BE /* MM5.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C7C1EC2E123CD5006177BE /* MM5.swift */; };
+		E3CD292C2E2A76C900552C33 /* FunctionalTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CD292B2E2A76C600552C33 /* FunctionalTools.swift */; };
+		E3CD292D2E2A76C900552C33 /* FunctionalTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CD292B2E2A76C600552C33 /* FunctionalTools.swift */; };
 		E3EC69532E252DC600911C72 /* Arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EC69522E252DAD00911C72 /* Arithmetic.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +100,7 @@
 		E3BA257F2E07DCA700F4DEA7 /* FPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3BA25EB2E07DE8C00F4DEA7 /* CopyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyTests.swift; sourceTree = "<group>"; };
 		E3C7C1EC2E123CD5006177BE /* MM5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM5.swift; sourceTree = "<group>"; };
+		E3CD292B2E2A76C600552C33 /* FunctionalTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalTools.swift; sourceTree = "<group>"; };
 		E3EC69522E252DAD00911C72 /* Arithmetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arithmetic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -213,6 +216,7 @@
 		E3BA255F2E0797BF00F4DEA7 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				E3CD292B2E2A76C600552C33 /* FunctionalTools.swift */,
 				E309EEE82E26A3BA007096CF /* Lambda.swift */,
 				E3BA25622E07D8BC00F4DEA7 /* Copy.swift */,
 				E3BA25602E0797C700F4DEA7 /* Array.swift */,
@@ -348,6 +352,7 @@
 				E32F0A492E044FE30082DD23 /* MegaMartView2.swift in Sources */,
 				E394BEBA2E22A50D007488DD /* MM11.swift in Sources */,
 				E361DE442E00544A007E10BE /* ContentView.swift in Sources */,
+				E3CD292D2E2A76C900552C33 /* FunctionalTools.swift in Sources */,
 				E361DE4A2E0054FC007E10BE /* CouponEmailView.swift in Sources */,
 				E309EEEA2E26A3C4007096CF /* Lambda.swift in Sources */,
 				E309EEE72E2694B3007096CF /* CE3.swift in Sources */,
@@ -389,6 +394,7 @@
 				E32BC8002E1D4DE00003C473 /* MM7.swift in Sources */,
 				E394BEBB2E22A50D007488DD /* MM11.swift in Sources */,
 				E376ABB72E117CDE0023B408 /* ArrayTests.swift in Sources */,
+				E3CD292C2E2A76C900552C33 /* FunctionalTools.swift in Sources */,
 				E32622F52E1F766A00213285 /* MM8.swift in Sources */,
 				E32622FB2E213BD200213285 /* MM10_NOSwiftUI.swift in Sources */,
 				E3217AC02E098C6B002F4D80 /* MapTests.swift in Sources */,
