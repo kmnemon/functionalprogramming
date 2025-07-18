@@ -73,7 +73,7 @@ func sortExample() {
 }
 
 func prefixExample() {
-    var numbers = [8, 3, 2]
+    let numbers = [8, 3, 2]
     let n = numbers.prefix(2)
     print(n)
 }
