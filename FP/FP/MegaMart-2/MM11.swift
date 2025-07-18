@@ -142,6 +142,11 @@ let shoppingList: [ShoppingItem] = [
     ShoppingItem(name: "Bread", price: 4.79)
 ]
 
+struct Product {
+    var type: String
+    var numberInInventory: Int
+}
+
 //MVVM
 var shoppingCartData: [String: ShoppingItem] = [:]
 
@@ -235,7 +240,17 @@ func IF(_ test: Bool, _ then: () -> Any, _ ELSE: () -> Any) -> Any {
         return ELSE()
     }
 }
+//1a. businees rules about inventory
 
+func shoesAndSocksInventory(_ products: [Product]) -> Int {
+    return products.filter {
+        return $0.type == "shoes" || $0.type == "socks"
+    }
+    .reduce(0) {
+        $0 + $1.numberInInventory
+    }
+    
+}
 
 //2.business rules(general)
 

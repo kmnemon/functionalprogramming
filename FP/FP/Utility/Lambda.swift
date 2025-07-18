@@ -34,3 +34,20 @@ func mapExample() {
     let anotherDoubled: [Int] = numbers.map { $0 * 2 }
     print(anotherDoubled)
 }
+
+func reduce<T, R>(_ array: [T], _ initial: R, _ f: (R, T) -> R) -> R {
+    var accumulator = initial
+    forEach(array) {
+        accumulator = f(accumulator, $0)
+    }
+    return accumulator
+}
+
+func reduceExample() {
+    let numbers: [Int] = [1, 2, 3, 4, 5]
+    let sum: Int = reduce(numbers, 0, +)
+    print(sum)
+    
+    let anotherSum: Int = numbers.reduce(0, +)
+    print(anotherSum)
+}
