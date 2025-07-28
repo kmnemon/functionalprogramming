@@ -65,7 +65,7 @@ func droppingQueue<T, R> (_ max: Int, _ worker: @escaping (T, (R) -> Void) -> Vo
 
 func calcWorker(_ item: Int, _ done: (Int)->Void) {
     //calc bussiness
-    var total = 100
+    let total = 100
     done(total)
 }
 

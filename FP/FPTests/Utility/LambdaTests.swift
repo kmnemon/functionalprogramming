@@ -8,8 +8,9 @@
 import Testing
 
 
-@Test func lambdaTest() {
+@Test func lambdaTest() async {
 //    flatMapExample()
 //    sortExample()
-    prefixExample()
+//    prefixExample()
+    await apply()
 }
