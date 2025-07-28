@@ -5,15 +5,30 @@
 //  Created by ke on 7/28/25.
 //
 
-//working in single thread model, not use to swift async and await
+//concurrency primitives
 func cut(_ num: Int, _ callback: @escaping () ->Void ) -> () async -> Void {
-    var numFinished = 0
-    return {
-        numFinished += 1
-        print(numFinished)
-        if numFinished == num {
-            callback()
+    actor Counter {
+        private var numFinished = 0
+        private let target: Int
+        private let callback: () -> Void
+        
+        init(target: Int, callback: @escaping () -> Void) {
+            self.target = target
+            self.callback = callback
         }
+        
+        func increment() {
+            numFinished += 1
+            print(numFinished)
+            if numFinished == target {
+                callback()
+            }
+        }
+    }
+    
+    let counter = Counter(target: num, callback: callback)
+    return {
+        await counter.increment()
     }
 }
 
@@ -21,11 +36,6 @@ func applyCut() async {
     let done = cut(3, {
         print("all done\n")
     })
-    
-    
-    //    done()
-    //    done()
-    //    done()
     
     async let call1: Void = done()
     async let call2: Void = done()

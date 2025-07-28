@@ -12,5 +12,5 @@ import Testing
 //    flatMapExample()
 //    sortExample()
 //    prefixExample()
-    await apply()
+    await applyCut()
 }
