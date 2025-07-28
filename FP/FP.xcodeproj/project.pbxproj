@@ -12,6 +12,8 @@
 		8AA5FEF82E04F37200BD9166 /* MM4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5FEF72E04F37200BD9166 /* MM4.swift */; };
 		8AD2A5922E08E138002DC7B8 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2A5912E08E136002DC7B8 /* Map.swift */; };
 		8AD2A5932E08E138002DC7B8 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2A5912E08E136002DC7B8 /* Map.swift */; };
+		8AE0C3712E374946002DBC9D /* Cut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE0C3702E374944002DBC9D /* Cut.swift */; };
+		8AE0C3722E374946002DBC9D /* Cut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE0C3702E374944002DBC9D /* Cut.swift */; };
 		8AE9D6082E0288A7007DC796 /* MM3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE9D6052E0288A7007DC796 /* MM3.swift */; };
 		E309EEE72E2694B3007096CF /* CE3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309EEE62E2694B3007096CF /* CE3.swift */; };
 		E309EEE92E26A3C4007096CF /* Lambda.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309EEE82E26A3BA007096CF /* Lambda.swift */; };
@@ -52,8 +54,8 @@
 		E3C7C1EE2E12419E006177BE /* MM5.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C7C1EC2E123CD5006177BE /* MM5.swift */; };
 		E3CD292C2E2A76C900552C33 /* FunctionalTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CD292B2E2A76C600552C33 /* FunctionalTools.swift */; };
 		E3CD292D2E2A76C900552C33 /* FunctionalTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CD292B2E2A76C600552C33 /* FunctionalTools.swift */; };
-		E3D9367A2E33AA7400B4FC88 /* Callback.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936792E33AA6F00B4FC88 /* Callback.swift */; };
-		E3D9367B2E33AA7400B4FC88 /* Callback.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936792E33AA6F00B4FC88 /* Callback.swift */; };
+		E3D9367A2E33AA7400B4FC88 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936792E33AA6F00B4FC88 /* Queue.swift */; };
+		E3D9367B2E33AA7400B4FC88 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936792E33AA6F00B4FC88 /* Queue.swift */; };
 		E3EC69532E252DC600911C72 /* Arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EC69522E252DAD00911C72 /* Arithmetic.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +74,7 @@
 		8A80E4D62E2A28C2000827EF /* LambdaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LambdaTests.swift; sourceTree = "<group>"; };
 		8AA5FEF72E04F37200BD9166 /* MM4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM4.swift; sourceTree = "<group>"; };
 		8AD2A5912E08E136002DC7B8 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		8AE0C3702E374944002DBC9D /* Cut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cut.swift; sourceTree = "<group>"; };
 		8AE9D6052E0288A7007DC796 /* MM3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM3.swift; sourceTree = "<group>"; };
 		E309EEE62E2694B3007096CF /* CE3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CE3.swift; sourceTree = "<group>"; };
 		E309EEE82E26A3BA007096CF /* Lambda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lambda.swift; sourceTree = "<group>"; };
@@ -103,7 +106,7 @@
 		E3BA25EB2E07DE8C00F4DEA7 /* CopyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyTests.swift; sourceTree = "<group>"; };
 		E3C7C1EC2E123CD5006177BE /* MM5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM5.swift; sourceTree = "<group>"; };
 		E3CD292B2E2A76C600552C33 /* FunctionalTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalTools.swift; sourceTree = "<group>"; };
-		E3D936792E33AA6F00B4FC88 /* Callback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Callback.swift; sourceTree = "<group>"; };
+		E3D936792E33AA6F00B4FC88 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		E3EC69522E252DAD00911C72 /* Arithmetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arithmetic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -219,7 +222,8 @@
 		E3BA255F2E0797BF00F4DEA7 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				E3D936792E33AA6F00B4FC88 /* Callback.swift */,
+				8AE0C3702E374944002DBC9D /* Cut.swift */,
+				E3D936792E33AA6F00B4FC88 /* Queue.swift */,
 				E3CD292B2E2A76C600552C33 /* FunctionalTools.swift */,
 				E309EEE82E26A3BA007096CF /* Lambda.swift */,
 				E3BA25622E07D8BC00F4DEA7 /* Copy.swift */,
@@ -366,8 +370,9 @@
 				E361DE512E0056C2007E10BE /* MM1.swift in Sources */,
 				E32622FF2E21F8E200213285 /* FoodExample.swift in Sources */,
 				E361DE4F2E0056B2007E10BE /* CE2.swift in Sources */,
+				8AE0C3722E374946002DBC9D /* Cut.swift in Sources */,
 				E32F0A472E04433C0082DD23 /* MM3b.swift in Sources */,
-				E3D9367B2E33AA7400B4FC88 /* Callback.swift in Sources */,
+				E3D9367B2E33AA7400B4FC88 /* Queue.swift in Sources */,
 				E34261782E240EFE00B9CB74 /* WithLogging.swift in Sources */,
 				E3234A362E18B50D00ADC1DE /* MM6.swift in Sources */,
 				E3BA25632E07D8BF00F4DEA7 /* Copy.swift in Sources */,
@@ -392,7 +397,7 @@
 				E3234A372E18B50D00ADC1DE /* MM6.swift in Sources */,
 				E376ABB52E11799A0023B408 /* MM2.swift in Sources */,
 				E3BA25ED2E07DF4A00F4DEA7 /* Copy.swift in Sources */,
-				E3D9367A2E33AA7400B4FC88 /* Callback.swift in Sources */,
+				E3D9367A2E33AA7400B4FC88 /* Queue.swift in Sources */,
 				E3C7C1EB2E122BEA006177BE /* Array.swift in Sources */,
 				E3C7C1EE2E12419E006177BE /* MM5.swift in Sources */,
 				8AD2A5932E08E138002DC7B8 /* Map.swift in Sources */,
@@ -406,6 +411,7 @@
 				E3217AC02E098C6B002F4D80 /* MapTests.swift in Sources */,
 				E32622F82E1FB11000213285 /* MM9.swift in Sources */,
 				E3BA25EC2E07DE9100F4DEA7 /* CopyTests.swift in Sources */,
+				8AE0C3712E374946002DBC9D /* Cut.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
