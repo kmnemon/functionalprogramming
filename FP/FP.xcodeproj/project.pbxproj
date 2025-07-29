@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8A4B14C02E024C55007D6402 /* MM2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B14BE2E024C55007D6402 /* MM2.swift */; };
 		8A80E4D72E2A28C9000827EF /* LambdaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A80E4D62E2A28C2000827EF /* LambdaTests.swift */; };
+		8A8DDB642E3856F10094358A /* JustOnce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8DDB632E3856ED0094358A /* JustOnce.swift */; };
+		8A8DDB652E3856F10094358A /* JustOnce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8DDB632E3856ED0094358A /* JustOnce.swift */; };
 		8AA5FEF82E04F37200BD9166 /* MM4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5FEF72E04F37200BD9166 /* MM4.swift */; };
 		8AD2A5922E08E138002DC7B8 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2A5912E08E136002DC7B8 /* Map.swift */; };
 		8AD2A5932E08E138002DC7B8 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2A5912E08E136002DC7B8 /* Map.swift */; };
@@ -72,6 +74,7 @@
 /* Begin PBXFileReference section */
 		8A4B14BE2E024C55007D6402 /* MM2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM2.swift; sourceTree = "<group>"; };
 		8A80E4D62E2A28C2000827EF /* LambdaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LambdaTests.swift; sourceTree = "<group>"; };
+		8A8DDB632E3856ED0094358A /* JustOnce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustOnce.swift; sourceTree = "<group>"; };
 		8AA5FEF72E04F37200BD9166 /* MM4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM4.swift; sourceTree = "<group>"; };
 		8AD2A5912E08E136002DC7B8 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		8AE0C3702E374944002DBC9D /* Cut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cut.swift; sourceTree = "<group>"; };
@@ -223,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				8AE0C3702E374944002DBC9D /* Cut.swift */,
+				8A8DDB632E3856ED0094358A /* JustOnce.swift */,
 				E3D936792E33AA6F00B4FC88 /* Queue.swift */,
 				E3CD292B2E2A76C600552C33 /* FunctionalTools.swift */,
 				E309EEE82E26A3BA007096CF /* Lambda.swift */,
@@ -363,6 +367,7 @@
 				E3CD292D2E2A76C900552C33 /* FunctionalTools.swift in Sources */,
 				E361DE4A2E0054FC007E10BE /* CouponEmailView.swift in Sources */,
 				E309EEEA2E26A3C4007096CF /* Lambda.swift in Sources */,
+				8A8DDB652E3856F10094358A /* JustOnce.swift in Sources */,
 				E309EEE72E2694B3007096CF /* CE3.swift in Sources */,
 				E32622FA2E213BD200213285 /* MM10_NOSwiftUI.swift in Sources */,
 				E32BC7FF2E1D4DE00003C473 /* MM7.swift in Sources */,
@@ -409,6 +414,7 @@
 				E32622F52E1F766A00213285 /* MM8.swift in Sources */,
 				E32622FB2E213BD200213285 /* MM10_NOSwiftUI.swift in Sources */,
 				E3217AC02E098C6B002F4D80 /* MapTests.swift in Sources */,
+				8A8DDB642E3856F10094358A /* JustOnce.swift in Sources */,
 				E32622F82E1FB11000213285 /* MM9.swift in Sources */,
 				E3BA25EC2E07DE9100F4DEA7 /* CopyTests.swift in Sources */,
 				8AE0C3712E374946002DBC9D /* Cut.swift in Sources */,
