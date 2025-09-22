@@ -7,7 +7,7 @@
 //
 //
 ////Model
-//struct ShoppingItem {
+//struct ShoppingItem: Hashable {
 //    let name: String
 //    let price: Double
 //}

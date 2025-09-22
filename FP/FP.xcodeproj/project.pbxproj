@@ -54,6 +54,7 @@
 		E3C7C1EE2E12419E006177BE /* MM5.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C7C1EC2E123CD5006177BE /* MM5.swift */; };
 		E3CD292C2E2A76C900552C33 /* FunctionalTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CD292B2E2A76C600552C33 /* FunctionalTools.swift */; };
 		E3CD292D2E2A76C900552C33 /* FunctionalTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CD292B2E2A76C600552C33 /* FunctionalTools.swift */; };
+		E3D32E0A2E8127C9009C202A /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D32E092E8127C9009C202A /* Pair.swift */; };
 		E3D9367A2E33AA7400B4FC88 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936792E33AA6F00B4FC88 /* Queue.swift */; };
 		E3D9367B2E33AA7400B4FC88 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936792E33AA6F00B4FC88 /* Queue.swift */; };
 		E3EC69532E252DC600911C72 /* Arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EC69522E252DAD00911C72 /* Arithmetic.swift */; };
@@ -106,6 +107,7 @@
 		E3BA25EB2E07DE8C00F4DEA7 /* CopyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyTests.swift; sourceTree = "<group>"; };
 		E3C7C1EC2E123CD5006177BE /* MM5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MM5.swift; sourceTree = "<group>"; };
 		E3CD292B2E2A76C600552C33 /* FunctionalTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalTools.swift; sourceTree = "<group>"; };
+		E3D32E092E8127C9009C202A /* Pair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
 		E3D936792E33AA6F00B4FC88 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		E3EC69522E252DAD00911C72 /* Arithmetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arithmetic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +133,7 @@
 		E32622FC2E21F8A900213285 /* FirstClass */ = {
 			isa = PBXGroup;
 			children = (
+				E3D32E082E8127C3009C202A /* DataStruct */,
 				E32622FD2E21F8C000213285 /* HighOrder */,
 			);
 			path = FirstClass;
@@ -250,6 +253,14 @@
 				E3BA25EB2E07DE8C00F4DEA7 /* CopyTests.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		E3D32E082E8127C3009C202A /* DataStruct */ = {
+			isa = PBXGroup;
+			children = (
+				E3D32E092E8127C9009C202A /* Pair.swift */,
+			);
+			path = DataStruct;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,6 +396,7 @@
 				E3C7C1ED2E123CD5006177BE /* MM5.swift in Sources */,
 				E3EC69532E252DC600911C72 /* Arithmetic.swift in Sources */,
 				8AA5FEF82E04F37200BD9166 /* MM4.swift in Sources */,
+				E3D32E0A2E8127C9009C202A /* Pair.swift in Sources */,
 				E361DE452E00544A007E10BE /* FPApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

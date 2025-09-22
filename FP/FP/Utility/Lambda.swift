@@ -35,6 +35,17 @@ func mapExample() {
     print(anotherDoubled)
 }
 
+func filter<T>(_ array: [T], _ f: (T) -> Bool ) -> [T] {
+    var newArray: [T] = []
+    forEach(array) {
+        if f($0) {
+            newArray.append($0)
+        }
+    }
+    
+    return newArray
+}
+
 func reduce<T, R>(_ array: [T], _ initial: R, _ f: (R, T) -> R) -> R {
     var accumulator = initial
     forEach(array) {

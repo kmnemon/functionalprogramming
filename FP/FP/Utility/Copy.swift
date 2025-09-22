@@ -48,9 +48,9 @@ extension Set: DeepCopyable where Element: DeepCopyable {
     }
 }
 
-extension Field: DeepCopyable {
-    func deepCopy() -> Self { self }
-}
+//extension Field: DeepCopyable {
+//    func deepCopy() -> Self { self }
+//}
 
 // 4. Implement global deep copy function
 func deepCopy<T: DeepCopyable>(_ value: T) -> T {
